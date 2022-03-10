@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.MainActivity">
+
+
+    <LinearLayout
+        android:id="@+id/ll_layout_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#E4E4E4"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/etxtMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight=".5"
+            android:background="@drawable/shape_text_input"
+            android:backgroundTint="@android:color/white"
+            android:hint="Type a message..."
+            android:inputType="textShortMessage"
+            android:padding="10dp"
+            android:singleLine="true" />
+
+        <Button
+            android:id="@+id/btnSend"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/shape_button"
+            android:backgroundTint="#26A69A"
+            android:text="Send"
+            android:textColor="@android:color/white" />
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvMessage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/ll_layout_bar"
+        android:layout_below="@+id/divider"
+        tools:itemCount="15"
+        tools:listitem="@layout/message_item" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        android:background="#2196F3" />
+
+
+</RelativeLayout>
